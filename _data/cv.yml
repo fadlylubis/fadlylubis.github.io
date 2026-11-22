@@ -2,96 +2,114 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Fadly Lubis
+    - name: Email
+      value: fadlylubis@outlook.com
+    - name: Portfolio
+      value: <a href="https://fadlylubis.streamlit.app">fadlylubis.streamlit.app</a>
     - name: Languages
-      value: English, German
+      value: English (near-native, professional), Bahasa Indonesia (native, professional), Malay (intermediate)
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+    - title: M.S. Information System Engineering
+      institution: University of Michigan - Dearborn, Dearborn, MI
+    - title: B.S. Information Systems Management
+      institution: University of Maryland Global Campus, Hyattsville, MD
 
+# Sections with `graph: true` are also drawn in the network graph on the about page.
+# A role's `skills:` list draws its links to skill nodes; names must match the Skills section to join up.
 - title: Experience
   type: time_table
+  graph: true
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Data Engineer
+      institution: Park Place Technologies, Cleveland, OH (Remote)
+      year: Apr 2026 - Present
+      skills: [Azure Data Factory, Fabric, Synapse Pipelines, Databricks, SQL Server, Great Expectations, FastAPI]
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Planned and executed the migration of legacy data pipelines from ADF to Microsoft Fabric.
+        - Built unified pipeline monitoring across all company orchestration engines (Synapse Pipelines, ADF, Fabric, Databricks, on-prem SQL Agent jobs) in a single pane of glass to identify and remediate failures.
+        - Engineered event-driven data validation and data contract engines with Great Expectations, covering incoming, transformed, and outgoing data layers.
+        - Developed a data classification engine using the TypeSafe AI JEV model behind a FastAPI gateway to classify human-error data entries, unlocking 300 hours of Master Data Management team time weekly.
+        - Designed semantic view layers in the Fabric Lakehouse, enabling BI developers and power users to reuse measures and AI agents to read data across the Fabric ecosystem.
+
+    - title: Machine Learning Engineer
+      institution: Service Express, Grand Rapids, MI (Remote)
+      year: Mar 2023 - Apr 2026
+      skills: [NLP, XGBoost, LLM, RAG, Mistral AI, Llama 2, Python, Go, Vue, Airflow, Prefect, Informatica, Kubernetes, MLflow]
       description:
-        - Description 1.
-        - Description 2.
+        - Developed PartsRX, an NLP hardware prediction model that classifies the parts and equipment needed for customer issues with 80% accuracy.
+        - Built OnDeck, a demand planning ML tool that forecasts parts demand from 30 years of contract and demand history using XGBoost and a custom uncertainty algorithm, with a stakeholder-tunable decision module and Monte Carlo stress testing (Go/Python backend, Vue frontend); authored a paper on the approach.
+        - Created Jarvis, an internal RAG-based AI system powered by Mistral AI and Llama 2 models.
+        - Engineered a 3D spatial distance model to map warehouse inventories, unlocking 1,000 hours of procurement productivity per month, and a geospatial algorithm that predicts the nearest stock location to customer sites.
+        - Built a vector-index search engine across millions of products, contracts, and knowledge base articles with query latency under 50 ms.
+        - Built sales quoting tools in Python, Go, and Vue, unlocking 3,000 cumulative hours for Sales and Customer Service teams across Europe and the US.
+        - Deployed and maintained custom Airflow and Prefect orchestration on Kubernetes, automating pipelines (Python, Informatica) that process several terabytes of data daily with no manual intervention.
+        - Engineered and maintained a scalable MLflow tracking server on Kubernetes, centralizing tracking of ML experiments, models, and datasets.
+        - Built time series churn prediction models with 96% accuracy, identifying at-risk customers early to strengthen retention and revenue stability.
+        - Developed an equipment-deletes time series model that forecasts equipment opt-out values and revenue impact from churn for financial planning.
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+    - title: Senior Business Intelligence Analyst
+      institution: Service Express, Grand Rapids, MI (Remote)
+      year: Apr 2022 - Feb 2023
+      skills: [Power BI, Streamlit, SSRS]
       description:
+        - Designed KPIs, metrics, and reports in Power BI and Streamlit for internal stakeholders and external clients.
+        - Consolidated redundant reports across multiple BI tools, reducing IT operating expenses by 15%.
+        - Engineered data warehouse and data lake infrastructure for Power BI, SSRS, and other reporting tools, improving data accessibility and report generation speed.
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+    - title: Data Analyst / Data Engineer
+      institution: Entrega System Group, Troy, MI
+      year: Jun 2021 - Apr 2022
+      skills: [Python]
+      description:
+        - Developed a Python-based file comparison web app to streamline data validation and synchronization.
+        - Engineered an ELT process integrating GM API data into the company's data lake to support analytics initiatives.
+        - Managed the GM billing process, overseeing more than $15M in monthly transactions with accuracy and compliance.
+        - Built a Python-based data suite to analyze continuous data streams and surface operational trends.
+        - Automated report generation from APIs, databases, and flat files, reducing manual effort and improving accuracy.
 
-- title: Open Source Projects
+    - title: eCommerce Manager
+      institution: Joe's Produce Gourmet Market, Livonia, MI
+      year: Mar 2020 - Jun 2021
+      description:
+        - Developed an integrated e-commerce platform for the company's three stores, generating over $500,000 in sales.
+        - Managed the platform's database operations and overall system performance.
+
+- title: Personal Project
   type: time_table
+  graph: true
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: Home Kubernetes Cluster
+      skills: [Kubernetes, Linux]
+      description:
+        - Built and maintained an on-premises Kubernetes cluster (40 CPU cores, 80 GB RAM) from Raspberry Pi 4 Model B units and repurposed Linux desktops, hosting high-availability home applications, web servers, databases, a vector database, and distributed computing tools.
 
-- title: Honors and Awards
-  type: time_table
+- title: Skills
+  type: map
+  graph: true
   contents:
-    - year: 1921
-      items: 
-        - Nobel Prize in Physics 
-        - Matteucci Medal
-    - year: 2029
-      items: 
-        - Max Planck Medal
-
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items: 
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - name: Machine Learning
+      value: NLP, XGBoost, NeuralProphet, TensorFlow, PyTorch, RLHF, LLM, RAG, Deep Learning, Neural Networks, Keras, Random Forest, K-Means Clustering, KNN, spaCy
+    - name: AI Tools
+      value: OpenAI SDK, LangChain, LlamaIndex, Llama 2, Hugging Face, FalconAI SDK, Cursor, Claude
+    - name: Programming Languages
+      value: Python, JavaScript, SQL, Go
+    - name: API Frameworks
+      value: FastAPI, Falcon, Flask, Go-Echo, Postman
+    - name: Web Frameworks
+      value: React, Streamlit, Vue, Rayfin, Fabric Apps, HTML5, CSS3
+    - name: Databases
+      value: SQL Server, NoSQL, PostgreSQL, MySQL, Snowflake
+    - name: Infrastructure
+      value: Kubernetes, Docker, Docker Compose, Ansible, Docker Hub
+    - name: Cloud
+      value: Azure
+    - name: ETL / Orchestration
+      value: Airflow, Prefect, Informatica, Fivetran, Azure Data Factory, Databricks, Fabric
+    - name: Data / ML Tools
+      value: PySpark, MLflow, Great Expectations, DVC, ClearML, H2O, MindsDB, Jupyter
+    - name: Data Visualization
+      value: Power BI, Tableau, Google Data Studio, Periscope (Sisense), Metabase, Apache Superset

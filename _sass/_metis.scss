@@ -1,0 +1,138 @@
+/*******************************************************************************
+ * Metis console look: dark navy canvas, hairline borders, one luminous blue
+ * accent, uppercase micro-labels. Tokens copied from metis/ui/src/design/tokens.css.
+ * Imported last, so it overrides the theme. The site is dark only.
+ ******************************************************************************/
+
+:root,
+html[data-theme='dark'] {
+  color-scheme: dark;
+
+  --m-bg-0: #070b11;
+  --m-bg-1: #0c121b;
+  --m-bg-2: #111a26;
+  --m-bg-3: #172333;
+  --m-border: #1a2738;
+  --m-border-strong: #26384f;
+  --m-text: #d6e0ea;
+  --m-text-strong: #f2f6fa;
+  --m-text-muted: #8496aa;
+  --m-text-faint: #506378;
+  --m-accent: #3c8dff;
+  --m-accent-hover: #63a5ff;
+  --m-accent-soft: rgba(60, 141, 255, 0.14);
+  --m-cyan: #2ee6d6;
+  --m-warning: #f0a43a;
+  --m-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --m-font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  // Map the theme's variables onto Metis tokens.
+  --global-bg-color: var(--m-bg-0);
+  --global-card-bg-color: var(--m-bg-1);
+  --global-code-bg-color: var(--m-bg-2);
+  --global-text-color: var(--m-text);
+  --global-text-color-light: var(--m-text-muted);
+  --global-theme-color: var(--m-accent);
+  --global-hover-color: var(--m-accent-hover);
+  --global-hover-text-color: var(--m-text-strong);
+  --global-footer-bg-color: var(--m-bg-1);
+  --global-footer-text-color: var(--m-text-faint);
+  --global-footer-link-color: var(--m-text-muted);
+  --global-divider-color: var(--m-border);
+  --global-distill-app-color: var(--m-text-muted);
+}
+
+body {
+  font-family: var(--m-font);
+  background-color: var(--m-bg-0);
+  color: var(--m-text);
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
+}
+h1, h2, h3, h4, h5, h6, .navbar, .btn, .badge, .card-title { font-family: var(--m-font); }
+code, pre, kbd { font-family: var(--m-font-mono); }
+::selection { background: rgba(60, 141, 255, 0.4); }
+a { color: var(--m-accent); }
+a:hover { color: var(--m-accent-hover); }
+:focus-visible { outline: 1px solid var(--m-accent); outline-offset: 1px; }
+
+// Top bar: elevated panel with a hairline, uppercase nav labels.
+.navbar {
+  background-color: var(--m-bg-1);
+  border-bottom: 1px solid var(--m-border);
+  opacity: 1;
+}
+.navbar.navbar-light .navbar-brand { color: var(--m-text-strong); letter-spacing: 0.02em; }
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--m-text-muted);
+}
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link { color: var(--m-accent); }
+
+footer.fixed-bottom, footer.sticky-bottom {
+  border-top: 1px solid var(--m-border);
+  font-size: 0.75rem;
+  font-family: var(--m-font-mono);
+}
+
+// Page headings.
+.post-title { color: var(--m-text-strong); font-weight: 300; letter-spacing: -0.01em; }
+.post-title .font-weight-bold { font-weight: 600 !important; }
+.post-header .desc, .post-description {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--m-text-muted);
+}
+
+// Panels: crisp corners, hairline borders, no shadows.
+.card {
+  background-color: var(--m-bg-1);
+  border: 1px solid var(--m-border);
+  border-radius: 2px;
+  box-shadow: none;
+}
+.card .card-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--m-text-muted);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--m-border);
+}
+.list-group-item { background-color: transparent; border-color: var(--m-border); }
+.z-depth-1, .z-depth-0 { box-shadow: none !important; }
+.rounded { border-radius: 2px !important; }
+.profile img { border: 1px solid var(--m-border-strong); }
+
+// CV date chips: monospace tags instead of red badges.
+.cv .card .list-group-item .badge {
+  background-color: var(--m-accent-soft) !important;
+  color: var(--m-accent) !important;
+  font-family: var(--m-font-mono);
+  font-weight: 500 !important;
+  font-size: 0.65rem;
+  white-space: normal; // long ranges wrap inside the 75px date column
+  line-height: 1.4;
+  border-radius: 2px;
+  box-shadow: none;
+}
+.cv .table-cv td { color: var(--m-text); }
+
+// Social icons (bottom of the about page): small and quiet.
+.social .contact-icons {
+  font-size: 1.5rem;
+  a { margin: 0 0.35rem; }
+  a i::before { color: var(--m-text-muted); }
+  a:hover i::before { color: var(--m-accent); }
+}
+.social .contact-note { font-size: 0.8rem; color: var(--m-text-faint); }
+
+// Sidebar table of contents.
+nav[data-toggle='toc'] .nav-link { color: var(--m-text-muted); font-size: 0.8rem; }
+nav[data-toggle='toc'] .nav-link.active { color: var(--m-accent); border-left-color: var(--m-accent); }

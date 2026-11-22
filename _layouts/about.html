@@ -45,6 +45,11 @@ layout: default
             {{ content }}
           </div>
 
+          {% if page.cv_graph -%}
+            {% assign graph_entries = site.data.cv | where_exp: "e", "e.graph" %}
+            {% include cv/graph.html entries=graph_entries %}
+          {%- endif %}
+
           <!-- News -->
           {% if page.news and site.announcements.enabled -%}
             <h2><a href="{{ '/news/' | relative_url }}" style="color: inherit;">news</a></h2>
