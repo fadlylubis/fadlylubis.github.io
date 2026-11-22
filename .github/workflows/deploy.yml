@@ -24,7 +24,7 @@ jobs:
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.2.2'
+        ruby-version: '3.4'  # same series as local builds; runners only ship the latest patch
         bundler-cache: true
     - name: Update _config.yml ⚙️
       uses: fjogeleit/yaml-update-action@v0.13.1
@@ -36,8 +36,6 @@ jobs:
     - name: Install and Build 🔧
       run: |
         sudo apt-get update && sudo apt-get install -y imagemagick  # resized profile photo (imagemagick.enabled in _config.yml)
-        pip3 install --upgrade jupyter
-        npm install -g mermaid.cli
         npm install -g purgecss
         export JEKYLL_ENV=production
         bundle exec jekyll build --lsi
